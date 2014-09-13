@@ -26,6 +26,12 @@ angular.module('directory', ['ionic', 'directory.services', 'directory.controlle
                 controller: 'EmployeeDetailCtrl'
             })
 
+            .state('employee-feed', {
+                url: '/employeeaccordion/:employeeId',
+                templateUrl: 'templates/employee-feed.html',
+                controller: 'accordionController'
+            })
+
             .state('employee-reports', {
                 url: '/employee/:employeeId/reports',
                 templateUrl: 'templates/employee-reports.html',

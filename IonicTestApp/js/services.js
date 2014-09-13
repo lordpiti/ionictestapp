@@ -33,7 +33,7 @@ angular.module('directory.services', [])
                 //});
                 
                 //return deferred.promise;
-                return $http.get('http://localhost:65077/api/contacts/GetContacts');
+                return $http.get('http://testwebapi9847.azurewebsites.net/api/contacts/GetContacts');
             },
 
             findById: function (employeeId) {
@@ -41,7 +41,8 @@ angular.module('directory.services', [])
                 //var employee = employees[employeeId - 1];
                 //deferred.resolve(employee);
                 //return deferred.promise;
-                return $http.get('http://localhost:65077/api/contacts/'+employeeId);
+
+                return $http.get('http://testwebapi9847.azurewebsites.net/api/contacts/GetContact?id=' + employeeId);
             },
 
             findByName: function(searchKey) {
@@ -52,18 +53,23 @@ angular.module('directory.services', [])
                 //});
                 //deferred.resolve(results);
                 //return deferred.promise;
-                return $http.get('http://localhost:65077/api/contacts/GetContactByName?fullName=' + searchKey);
+                return $http.get('http://testwebapi9847.azurewebsites.net/api/contacts/GetContactByName?fullName=' + searchKey);
             },
 
             findByManager: function (managerId) {
-                var deferred = $q.defer(),
-                    results = employees.filter(function (element) {
-                        return parseInt(managerId) === element.managerId;
-                    });
-                deferred.resolve(results);
-                return deferred.promise;
-            }
-
+                //var deferred = $q.defer(),
+                //    results = employees.filter(function (element) {
+                //        return parseInt(managerId) === element.managerId;
+                //    });
+                //deferred.resolve(results);
+                //return deferred.promise;
+                return $http.get('http://testwebapi9847.azurewebsites.net/api/contacts/GetByManagerId?managerId=' + managerId);
+            },
+            getRSS: function (feedUrl) {
+                
+                var finalUrl = 'http://ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=50&callback=JSON_CALLBACK&q=' + encodeURIComponent(feedUrl);
+                return $http.jsonp(finalUrl);
+            },
         }
 
     });
