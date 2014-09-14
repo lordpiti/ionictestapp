@@ -23,17 +23,13 @@ angular.module('directory.controllers', ['ionic'])
             //    $scope.employees = employees;
             //});
 
-            //$ionicLoading.show({
-            //    content: 'Loading',
-            //    animation: 'fade-in',
-            //    showBackdrop: true,
-            //    maxWidth: 200,
-            //    showDelay: 0
-            //});
+            $scope.loadingIndicator = $ionicLoading.show({
+                template: '<p>Loading ...</p>'
+            });
 
             EmployeeService.findAll().success(function (response) {
                 $scope.employees = response;
-                //$ionicLoading.hide();
+                $ionicLoading.hide();
             });
         }
 
