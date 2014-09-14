@@ -99,6 +99,18 @@
   </PropertyGroup>
   <ItemGroup>
     <Content Include="index.html" />
+    <Content Include="lib\css\ionic.css" />
+    <Content Include="lib\css\ionic.min.css" />
+    <Content Include="lib\js\angular-ui\angular-ui-router.js" />
+    <Content Include="lib\js\angular-ui\angular-ui-router.min.js" />
+    <Content Include="lib\js\angular\angular-animate.js" />
+    <Content Include="lib\js\angular\angular-animate.min.js" />
+    <Content Include="lib\js\angular\angular-resource.js" />
+    <Content Include="lib\js\angular\angular-resource.min.js" />
+    <Content Include="lib\js\angular\angular-sanitize.js" />
+    <Content Include="lib\js\angular\angular-sanitize.min.js" />
+    <Content Include="lib\js\angular\angular.js" />
+    <Content Include="lib\js\angular\angular.min.js" />
     <Content Include="res\icons\android\icon-72-hdpi.png" />
     <Content Include="res\icons\android\icon-36-ldpi.png" />
     <Content Include="res\icons\android\icon-48-mdpi.png" />
@@ -119,44 +131,10 @@
     <Content Include="js\app.js" />
     <Content Include="js\controllers.js" />
     <Content Include="js\services.js" />
-    <Content Include="lib\css\ionic.css" />
-    <Content Include="lib\css\ionic.min.css" />
     <Content Include="lib\fonts\ionicons.eot" />
     <Content Include="lib\fonts\ionicons.svg" />
     <Content Include="lib\fonts\ionicons.ttf" />
     <Content Include="lib\fonts\ionicons.woff" />
-    <Content Include="lib\js\angular-ui\angular-ui-router.js" />
-    <Content Include="lib\js\angular-ui\angular-ui-router.min.js" />
-    <Content Include="lib\js\angular\angular-animate.js" />
-    <Content Include="lib\js\angular\angular-animate.min.js" />
-    <Content Include="lib\js\angular\angular-animate.min.js.map" />
-    <Content Include="lib\js\angular\angular-cookies.js" />
-    <Content Include="lib\js\angular\angular-cookies.min.js" />
-    <Content Include="lib\js\angular\angular-cookies.min.js.map" />
-    <Content Include="lib\js\angular\angular-csp.css" />
-    <Content Include="lib\js\angular\angular-loader.js" />
-    <Content Include="lib\js\angular\angular-loader.min.js" />
-    <Content Include="lib\js\angular\angular-loader.min.js.map" />
-    <Content Include="lib\js\angular\angular-mocks.js" />
-    <Content Include="lib\js\angular\angular-resource.js" />
-    <Content Include="lib\js\angular\angular-resource.min.js" />
-    <Content Include="lib\js\angular\angular-resource.min.js.map" />
-    <Content Include="lib\js\angular\angular-route.js" />
-    <Content Include="lib\js\angular\angular-route.min.js" />
-    <Content Include="lib\js\angular\angular-route.min.js.map" />
-    <Content Include="lib\js\angular\angular-sanitize.js" />
-    <Content Include="lib\js\angular\angular-sanitize.min.js" />
-    <Content Include="lib\js\angular\angular-sanitize.min.js.map" />
-    <Content Include="lib\js\angular\angular-scenario.js" />
-    <Content Include="lib\js\angular\angular-touch.js" />
-    <Content Include="lib\js\angular\angular-touch.min.js" />
-    <Content Include="lib\js\angular\angular-touch.min.js.map" />
-    <Content Include="lib\js\angular\angular.js" />
-    <Content Include="lib\js\angular\angular.min.js" />
-    <Content Include="lib\js\angular\angular.min.js.map" />
-    <Content Include="lib\js\angular\errors.json" />
-    <Content Include="lib\js\angular\version.json" />
-    <Content Include="lib\js\angular\version.txt" />
     <Content Include="lib\js\ionic-angular.js" />
     <Content Include="lib\js\ionic-angular.min.js" />
     <Content Include="lib\js\ionic.js" />
@@ -229,7 +207,6 @@
     <Content Include="res\screens\windows-phone\screen-portrait.jpg" />
     <Content Include="scripts\index.js" />
     <Content Include="scripts\platformOverrides.js" />
-    <Content Include="css\index.css" />
     <Content Include="res\cert\android\ant.properties" />
   </ItemGroup>
   <PropertyGroup>

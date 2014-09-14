@@ -1,5 +1,5 @@
-<view title="employee.FirstName + ' ' + employee.LastName">
-  <content has-header="true" padding="true">
+<ion-view title="{{employee.FirstName}} {{employee.LastName}}">
+  <ion-content>
       <div class="details">
           <img src="pics/{{employee.Pic }}" width="100" height="100"/>
           <h4>{{ employee.FirstName }} {{ employee.LastName }}</h4>
@@ -44,5 +44,5 @@
               </select>
           </label>
       </div>
-</content>
-</view>
+</ion-content>
+</ion-view>

@@ -1,11 +1,11 @@
-<view title="'Esclavos'">
-    <content has-header="true">
-        <list>
-            <item ng-repeat="employee in employees" type="item-text-wrap" href="#/employee/{{employee.Id}}">
+<ion-view title="'Esclavos'">
+    <ion-content>
+        <ion-list>
+            <ion-item ng-repeat="employee in employees" type="item-text-wrap" href="#/employee/{{employee.Id}}">
                 <h3>{{employee.FirstName}} {{employee.LastName}}</h3>
                 <p>{{employee.Title}}</p>
+            </ion-item>
             </item>
-            </item>
-        </list>
-    </content>
-</view>
+        </ion-list>
+    </ion-content>
+</ion-view>

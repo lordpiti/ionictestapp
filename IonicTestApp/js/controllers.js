@@ -1,6 +1,6 @@
-angular.module('directory.controllers', [])
+angular.module('directory.controllers', ['ionic'])
 
-    .controller('EmployeeIndexCtrl', function ($scope, EmployeeService) {
+    .controller('EmployeeIndexCtrl', function ($scope, EmployeeService, $ionicLoading) {
 
         $scope.searchKey = "";
 
@@ -23,8 +23,17 @@ angular.module('directory.controllers', [])
             //    $scope.employees = employees;
             //});
 
+            //$ionicLoading.show({
+            //    content: 'Loading',
+            //    animation: 'fade-in',
+            //    showBackdrop: true,
+            //    maxWidth: 200,
+            //    showDelay: 0
+            //});
+
             EmployeeService.findAll().success(function (response) {
                 $scope.employees = response;
+                //$ionicLoading.hide();
             });
         }
 
