@@ -111,6 +111,7 @@
     <Content Include="lib\js\angular\angular-sanitize.min.js" />
     <Content Include="lib\js\angular\angular.js" />
     <Content Include="lib\js\angular\angular.min.js" />
+    <Content Include="res\cert\android\pititest.keystore" />
     <Content Include="res\icons\android\icon-72-hdpi.png" />
     <Content Include="res\icons\android\icon-36-ldpi.png" />
     <Content Include="res\icons\android\icon-48-mdpi.png" />
