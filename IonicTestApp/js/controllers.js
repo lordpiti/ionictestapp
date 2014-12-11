@@ -75,7 +75,7 @@ angular.module('directory.controllers', ['ionic'])
         ];
 
         var filteredEmployees = Enumerable.from(employees).where("x=>x.Id>5");
-
+        $scope.origin = { text: ""};
         $scope.filteredListByLINQ = filteredEmployees.toArray();
         var directionsDisplay = new google.maps.DirectionsRenderer();
 
@@ -102,7 +102,7 @@ angular.module('directory.controllers', ['ionic'])
             var marker = new google.maps.Marker({
                 position: myLatlng,
                 map: map,
-                title: 'Uluru (Ayers Rock)'
+                title: 'SOMEWHERE BEYOND THE SEA'
             });
 
             google.maps.event.addListener(marker, 'click', function () {
@@ -143,24 +143,34 @@ angular.module('directory.controllers', ['ionic'])
             alert('Example of infowindow with ng-click')
         };
 
-        //Directions
-        var directionsService = new google.maps.DirectionsService();
+        $scope.calcRoute = function () {
 
-        $scope.calcRoute = function() {
-            var start = "West Kensington, London";
-            var end = "Chiswick Park, London";
-            var request = {
-                origin: start,
-                destination: end,
-                travelMode: google.maps.TravelMode.WALKING
-            };
-            directionsService.route(request, function (response, status) {
-                if (status == google.maps.DirectionsStatus.OK) {
-                    $scope.directionsDisplay.setDirections(response);
-                }
-            });
+            //Directions
+            var directionsService = new google.maps.DirectionsService();
+
+            var options = { timeout: 31000, enableHighAccuracy: true, maximumAge: 90000 };
+
+            //Get current position using geolocation and use it as the origin to go somewhere else
+            navigator.geolocation.getCurrentPosition(function (pos) {
+                var currentLoc = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
+
+                var start = currentLoc;
+                var end = $scope.origin.text;//"Oxford Circus, London";
+                var request = {
+                    origin: start,
+                    destination: end,
+                    travelMode: google.maps.TravelMode.WALKING
+                };
+                directionsService.route(request, function (response, status) {
+                    if (status == google.maps.DirectionsStatus.OK) {
+                        $scope.directionsDisplay.setDirections(response);
+                    }
+                });
+
+            }, function (error) {
+                alert('Unable to get location: ' + error.message);
+            }, options);
         }
-
     })
 
     .controller('accordionController', function ($scope, $stateParams, EmployeeService) {

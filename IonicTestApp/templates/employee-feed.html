@@ -1,4 +1,4 @@
-﻿<ion-view title="'Noticias del equipo'">
+﻿<ion-view title="Team News">
     <ion-content>
         <ion-list>
             <div ng-repeat="group in groups">
@@ -12,7 +12,8 @@
                 <ion-item class="item-accordion"
                       ng-repeat="item in group.items"
                       ng-show="isGroupShown(group)">
-                    {{item.link}}<br /><div class="item item-body"><h5>{{item.contentSnippet}}</h5></div>
+                    <a href="{{item.link}}">{{item.link}}</a><br />
+                    <div class="item item-body"><h5>{{item.contentSnippet}}</h5></div>
                 </ion-item>
             </div>
         </ion-list>

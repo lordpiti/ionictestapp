@@ -8,20 +8,15 @@
       </div>
       <iframe width="300" height="185" src="http://www.youtube.com/embed/SpO6tBtSHZo" frameborder="0" allowfullscreen autoplay="1"></iframe>
       <div class="list card">
-          <a class="item item-icon-left" href="#/employee/{{employee.ManagerId}}" ng-if="employee.ManagerId > 0"><i class="icon ion-ios7-person"></i>Ver su jefe<p>{{employee.ManagerName}}</p></a>
-          <a class="item item-icon-left" href="#/employee/{{employee.Id}}/reports" ng-if="employee.Reports > 0"><i class="icon ion-person-stalker"></i>Ver sus lacayos<p>{{employee.Reports}}</p></a>
-          <a class="item item-icon-left" href="tel:{{employee.OfficePhone}}"><i class="icon ion-ios7-telephone"></i>Llamar a la oficina<p>{{employee.officePhone}}</p></a>
-          <a class="item item-icon-left" href="tel:{{employee.CellPhone}}"><i class="icon ion-ios7-telephone"></i>Llamar al movil<p>{{employee.CellPhone}}</p></a>
+          <a class="item item-icon-left" href="#/employee/{{employee.ManagerId}}" ng-if="employee.ManagerId > 0"><i class="icon ion-ios7-person"></i>See manager<p>{{employee.ManagerName}}</p></a>
+          <a class="item item-icon-left" href="#/employee/{{employee.Id}}/reports" ng-if="employee.Reports > 0"><i class="icon ion-person-stalker"></i>See employees<p>{{employee.Reports}}</p></a>
+          <a class="item item-icon-left" href="tel:{{employee.OfficePhone}}"><i class="icon ion-ios7-telephone"></i>Call landline<p>{{employee.officePhone}}</p></a>
+          <a class="item item-icon-left" href="tel:{{employee.CellPhone}}"><i class="icon ion-ios7-telephone"></i>Call mobile<p>{{employee.CellPhone}}</p></a>
           <a class="item item-icon-left" href="sms:{{employee.CellPhone}}"><i class="icon ion-chatbox-working"></i>SMS<p>{{employee.CellPhone}}</p></a>
           <a class="item item-icon-left" href="mailto:{{employee.Email}}"><i class="icon ion-ios7-email"></i>Email<p>{{employee.Email}}</p></a>
-          <a class="item item-icon-left" href="#/employeeaccordion/{{employee.Id}}"><i class="icon ion-ios7-person"></i>Ver noticias del equipo<p>feed</p></a>
-          <a class="item item-icon-left" href="#/linqtest"><i class="icon ion-ios7-person"></i>LINQ TEST<p>linq</p></a>
+          <a class="item item-icon-left" href="#/employeeaccordion/{{employee.Id}}"><i class="icon ion-ios7-person"></i>See team news<p>feed</p></a>
+          <a class="item item-icon-left" href="#/linqtest"><i class="icon ion-ios7-person"></i>Google Maps API & LINQ test<p>linq</p></a>
       </div>
-      <!--<ul>
-          <li ng-repeat="feed in feeds">
-              <h5><a href="{{feed.link}}">{{feed.title}}</a></h5>
-          </li>
-      </ul>-->
       <ul class="list">
           <li class="item item-toggle">
               HTML5
