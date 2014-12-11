@@ -99,6 +99,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Content Include="index.html" />
+    <Content Include="js\plugins\jquery-2.1.1.min.js" />
+    <Content Include="js\plugins\linq.jquery.js" />
+    <Content Include="js\plugins\linq.min.js" />
     <Content Include="lib\css\ionic.css" />
     <Content Include="lib\css\ionic.min.css" />
     <Content Include="lib\js\angular-ui\angular-ui-router.js" />
@@ -111,7 +114,6 @@
     <Content Include="lib\js\angular\angular-sanitize.min.js" />
     <Content Include="lib\js\angular\angular.js" />
     <Content Include="lib\js\angular\angular.min.js" />
-    <Content Include="lib\js\jquery-2.1.1.min.js" />
     <Content Include="res\cert\android\pititest.keystore" />
     <Content Include="res\icons\android\icon-72-hdpi.png" />
     <Content Include="res\icons\android\icon-36-ldpi.png" />
@@ -122,10 +124,12 @@
     <Content Include="res\screens\android\screen-mdpi-portrait.png" />
     <Content Include="res\screens\android\screen-xhdpi-portrait.png" />
     <Content Include="res\testIcon.jpg" />
+    <Content Include="lib\js\jquery-2.1.1.min.js" />
     <Content Include="templates\employee-detail.html" />
     <Content Include="templates\employee-feed.html" />
     <Content Include="templates\employee-index.html" />
     <Content Include="templates\employee-reports.html" />
+    <Content Include="templates\linq-test.html" />
     <Folder Include="images\" />
     <Content Include="css\app.css" />
     <Content Include="img\ionic.png" />

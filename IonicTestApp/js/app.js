@@ -32,6 +32,12 @@ angular.module('directory', ['ionic', 'directory.services', 'directory.controlle
                 controller: 'accordionController'
             })
 
+            .state('linq-test', {
+                url: '/linqtest',
+                templateUrl: 'templates/linq-test.html',
+                controller: 'linqController'
+            })
+
             .state('employee-reports', {
                 url: '/employee/:employeeId/reports',
                 templateUrl: 'templates/employee-reports.html',
