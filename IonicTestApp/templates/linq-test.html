@@ -1,0 +1,46 @@
+﻿<ion-view title="LINQJS and Google Maps API Test">
+    <ion-content>
+        <ul class="list">
+            <li class="item item-toggle">
+                Google Maps service
+                <label class="toggle toggle-assertive">
+                    <input type="checkbox" ng-model="objectGoogleMaps.enable">
+                    <div class="track">
+                        <div class="handle"></div>
+                    </div>
+                </label>
+            </li>
+        </ul>
+
+        <ion-list ng-hide="objectGoogleMaps.enable">
+            <ion-item ng-repeat="item in filteredListByLINQ" type="item-text-wrap" href="#/employee/{{item.Id}}">
+                <h3>{{item.FirstName}} {{item.LastName}}</h3>
+                <p>{{item.Title}}</p>
+            </ion-item>
+        </ion-list>
+
+        <div ng-show="objectGoogleMaps.enable">
+            <div class="list">
+                <label class="item item-input item-select">
+                    <div class="input-label">
+                        Route type
+                    </div>
+                    <select ng-model="objectGoogleMaps.routeType">
+                        <option value="1">Walking</option>
+                        <option value="2" selected>Driving</option>
+                        <option value="3">Public transport</option>
+                    </select>
+                </label>
+            </div>
+            <label class="item-input-wrapper">
+                <i class="icon ion-ios7-search placeholder-icon"></i>
+                <input id="origin" type="text" placeholder="Destination" ng-model="objectGoogleMaps.destination">
+            </label>
+        </div>
+        <div id="map" data-tap-disabled="true"></div>
+    </ion-content>
+    <ion-footer-bar class="bar-dark" ng-show="objectGoogleMaps.enable">
+        <a ng-click="centerOnMe()" class="button button-icon icon ion-navigate">Find Me</a>
+        <a ng-click="calcRoute()" class="button button-icon icon ion-navigate">Route</a>
+    </ion-footer-bar>
+</ion-view>

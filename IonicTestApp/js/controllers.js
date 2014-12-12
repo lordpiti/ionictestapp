@@ -75,7 +75,14 @@ angular.module('directory.controllers', ['ionic'])
         ];
 
         var filteredEmployees = Enumerable.from(employees).where("x=>x.Id>5");
-        $scope.origin = { text: ""};
+        $scope.origin = { text: "" };
+        $scope.routeType = { text: "2" };
+        $scope.objectGoogleMaps = {
+            enable: false,
+            routeType: "2",
+            destination: ""
+        };
+
         $scope.filteredListByLINQ = filteredEmployees.toArray();
         var directionsDisplay = new google.maps.DirectionsRenderer();
 
@@ -131,9 +138,15 @@ angular.module('directory.controllers', ['ionic'])
 
             var options = { timeout: 31000, enableHighAccuracy: true, maximumAge: 90000 };
 
+            //Use HTML5 geolocation
             navigator.geolocation.getCurrentPosition(function (pos) {
                 $scope.map.setCenter(new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude));
                 $scope.loading.hide();
+                var marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude),
+                    map: $scope.map,
+                    title: "I'm here"
+                });
             }, function (error) {
                 alert('Unable to get location: ' + error.message);
             },options);
@@ -155,11 +168,28 @@ angular.module('directory.controllers', ['ionic'])
                 var currentLoc = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
 
                 var start = currentLoc;
-                var end = $scope.origin.text;//"Oxford Circus, London";
+                var end = $scope.objectGoogleMaps.destination;//"Oxford Circus, London";
+
+                var routeTypeString = google.maps.TravelMode.WALKING;
+
+                switch ($scope.objectGoogleMaps.routeType)
+                {
+                    case "1":
+                        routeTypeString = google.maps.TravelMode.WALKING;
+                        break;
+                    case "2":
+                        routeTypeString = google.maps.TravelMode.DRIVING;
+                        break;
+                    case "3":
+                        routeTypeString = google.maps.TravelMode.TRANSIT;
+                        break;
+                    default: break;
+                }
+
                 var request = {
                     origin: start,
                     destination: end,
-                    travelMode: google.maps.TravelMode.WALKING
+                    travelMode: routeTypeString
                 };
                 directionsService.route(request, function (response, status) {
                     if (status == google.maps.DirectionsStatus.OK) {
